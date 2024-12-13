@@ -16,11 +16,13 @@
       </nav>
     </header>
     <main>
-      <section>
+      <section class="contenedorMeme">
         <div class="topText">
           <h2>top text</h2>
         </div>
-        <div class="contenedorImg"></div>
+        <div class="contenedorImg">
+          <img src="./imagen/momo.png" alt="">
+        </div>
         <div class="buttonText">
           <h2>button Text</h2>
         </div>
@@ -30,7 +32,7 @@
         <section class="controlIMG" id="panelImg">
           <h1>IMAGEN</h1>
           <h1>URL</h1>
-          <input class="inputText" type="text" />
+          <input class="inputText" type="text" id="inputUrl" />
           <div class="selectorColor">
             <div><input class="inputColor" aria-label="" type="color" /></div>
             <div class="selector">
@@ -154,37 +156,5 @@
       </aside>
     </main>
   </body>
-  <script>
-    // variables del Dom//
-    const panelDeControl = document.querySelector("#panelDeControl");
-
-    const btnCerrarPanel = document.querySelector("#btnCerrarPanel");
-    const btnTex = document.querySelector("#btnTex");
-    const btnImg = document.querySelector("#btnImg");
-
-    const panelImg = document.querySelector("#panelImg");
-
-// Eventos - panel de imagen y texto//
-    btnCerrarPanel.addEventListener("click", (e) => {
-      e.preventDefault();
-      panelDeControl.style.display = "none";
-    });
-
-    btnImg.addEventListener("click", (e) => {
-      e.preventDefault();
-      panelDeControl.style.display = "block";
-      panelText.style.display = "none";
-      panelImg.style.display = "block"
-      
-    });
-
-    btnTex.addEventListener("click", (e) => {
-      e.preventDefault();
-      panelDeControl.style.display = "block";
-      panelImg.style.display = "none";
-      panelText.style.display = "block";
-    });
-
-
-  </script>
+  <script src="./index.js"></script>
 </html>
