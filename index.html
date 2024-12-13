@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styes.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Generador de Memes</h1>
+      <nav>
+        <button class="btnImg" id="btnImg">Imagen</button>
+        <button class="btnTex" id="btnTex">Texto</button>
+        <button class="modo">MODO Oscuro</button>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <div class="topText">
+          <h2>top text</h2>
+        </div>
+        <div class="contenedorImg"></div>
+        <div class="buttonText">
+          <h2>button Text</h2>
+        </div>
+      </section>
+      <aside class="panelDeControl" id="panelDeControl">
+        <button id="btnCerrarPanel">x</button>
+        <section class="controlIMG" id="panelImg">
+          <h1>IMAGEN</h1>
+          <h1>URL</h1>
+          <input class="inputText" type="text" />
+          <div class="selectorColor">
+            <div><input class="inputColor" aria-label="" type="color" /></div>
+            <div class="selector">
+              <select aria-label="capa" id="">
+                <option value="unset">Ninguno</option>
+                <option value="lighten">Aclarar</option>
+                <option value="darken">Oscurecer</option>
+                <option value="difference">Diferencia</option>
+                <option value="luminosity">Luminosidad</option>
+                <option value="multiply">Multiplicar</option>
+              </select>
+            </div>
+          </div>
+          <h1>Filtros</h1>
+          <div class="filtros">
+            <label for="brightness">BRILLO</label>
+            <input type="range" />
+          </div>
+          <div class="filtros">
+            <label for="opacity">OPACIDAD</label>
+            <input type="range" />
+          </div>
+          <div class="filtros">
+            <label for="contrast">CONTRASTE</label>
+            <input type="range" />
+          </div>
+          <div class="filtros">
+            <label for="blur">DESENFOQUE</label>
+            <input type="range" />
+          </div>
+          <div class="filtros">
+            <label for="grayscale">ESCALA DE GRISES</label>
+            <input type="range" />
+          </div>
+          <div class="filtros">
+            <label for="sepia">SEPIA</label>
+            <input type="range" />
+          </div>
+          <div class="filtros">
+            <label for="hue-rotation">HUE</label>
+            <input type="range" />
+          </div>
+          <div class="filtros">
+            <label for="saturation">SATURACION</label>
+            <input type="range" />
+          </div>
+          <div class="filtros">
+            <label for="negative">NEGATIVO</label>
+            <input type="range" />
+          </div>
+          <button>Restablecer filtros</button>
+        </section>
+        <section class="controltext" id="panelText">
+          <h1>TEXTO</h1>
+          <section class="filtros">
+            <h1>SUPERIOR</h1>
+            <textarea class="inputText" name="" id="">top text</textarea>
+            <div>
+              <input type="checkbox" name="" id="" />
+              <label for="notTopCheck">Sin texto superior</label>
+            </div>
+            <div class="filtros">
+              <h1>INFERIOR</h1>
+              <textarea class="inputText" name="" id="">bottom text</textarea>
+              <div>
+                <input type="checkbox" name="" id="" />
+                <label for="notTopCheck">Sin texto superior</label>
+              </div>
+            </div>
+            <div class="filtros inputText">
+              <h1>Fuente</h1>
+              <select name="familyFront" id="">
+                <option value="Arial">Arial</option>
+                <option value="Arial Black">Arial Black</option>
+                <option value="impact">Impact</option>
+                <option value="Segoe UI">Segoe UI</option>
+              </select>
+            </div>
+            <div class="filtros inputText">
+              <input type="number" />
+            </div>
+            <div>
+              <button></button>
+              <button></button>
+              <button></button>
+            </div>
+            <div class="filtros">
+              <h1>Color</h1>
+              <input class="inputColor" type="color" />
+            </div>
+            <div class="filtros">
+              <h1>Fondo</h1>
+              <input class="inputColor" type="color" />
+            </div>
+            <div class="filtros alineado">
+              <input type="checkbox" />
+              <label for="fondoTransparente">Fondo transparente</label>
+            </div>
+            <h1>Contorno</h1>
+            <div>
+              <button>Ninguno</button>
+              <button>Claro</button>
+              <button>Oscuro</button>
+            </div>
+            <div class="filtros inputText">
+              <h1>Espaciado</h1>
+              <input type="number" />
+            </div>
+            <div class="filtros inputText">
+              <h1>Interlineado</h1>
+              <select name="interlinead" id="">
+                <option value="0.8 ">0.8</option>
+                <option value="1">1</option>
+                <option value="1.2">1.2</option>
+                <option value="1.5">1.5</option>
+                <option value="2"></option>
+              </select>
+            </div>
+          </section>
+        </section>
+      </aside>
+    </main>
+  </body>
+  <script>
+    // variables del Dom//
+    const panelDeControl = document.querySelector("#panelDeControl");
+
+    const btnCerrarPanel = document.querySelector("#btnCerrarPanel");
+    const btnTex = document.querySelector("#btnTex");
+    const btnImg = document.querySelector("#btnImg");
+
+    const panelImg = document.querySelector("#panelImg");
+
+// Eventos - panel de imagen y texto//
+    btnCerrarPanel.addEventListener("click", (e) => {
+      e.preventDefault();
+      panelDeControl.style.display = "none";
+    });
+
+    btnImg.addEventListener("click", (e) => {
+      e.preventDefault();
+      panelDeControl.style.display = "block";
+      panelText.style.display = "none";
+      panelImg.style.display = "block"
+      
+    });
+
+    btnTex.addEventListener("click", (e) => {
+      e.preventDefault();
+      panelDeControl.style.display = "block";
+      panelImg.style.display = "none";
+      panelText.style.display = "block";
+    });
+
+
+  </script>
+</html>

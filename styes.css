@@ -1,0 +1,95 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header{
+  background-color: #2e2e2e4f;
+  width: 100%;
+  height: 80px;
+}
+nav{
+  background-color: #26292f;
+  width: 100%;
+  height: 50px;
+display: flex;
+justify-content: center;
+}
+button{
+  background-color: #5e5e5f;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  align-items: center;
+}
+.topText{
+  background-color: rgb(19, 55, 102);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h2{
+  color: white;
+  margin-top: 20px;
+}
+.contenedorImg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #26292f;
+  height: 270px;
+}
+.buttonText{
+  background-color: rgb(19, 55, 102);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.panelDeControl{
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  z-index: 10;
+  background-color: #3d485e;
+  top: 0;
+}
+.controlIMG{
+  padding: 16px;
+color: aliceblue;
+}
+.inputText{
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+.inputColor{
+  background-color: transparent;
+  border: none;
+}
+.selectorColor{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:space-between;
+}
+.filtros{
+  margin-bottom: 10px;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* panel de texto */
+.controltext{
+  padding: 16px;
+color: aliceblue;
+}
+.alineado{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
