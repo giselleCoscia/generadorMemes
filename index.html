@@ -6,19 +6,19 @@
     <title>Document</title>
     <link rel="stylesheet" href="./styes.css" />
   </head>
-  <body>
+  <body  class="darkTheme">
     <header>
       <h1>Generador de Memes</h1>
       <nav>
         <button class="btnImg" id="btnImg">Imagen</button>
         <button class="btnTex" id="btnTex">Texto</button>
-        <button class="modo">MODO Oscuro</button>
+        <button class="btn" id="btnToogleTheme">Modo Oscuro</button>
       </nav>
     </header>
     <main>
       <section class="contenedorMeme">
         <div class="topText">
-          <h2>top text</h2>
+          <h2 id="topText">top text</h2>
         </div>
         <div class="contenedorImg">
           <img src="./imagen/momo.png" alt="">
@@ -89,7 +89,7 @@
           <h1>TEXTO</h1>
           <section class="filtros">
             <h1>SUPERIOR</h1>
-            <textarea class="inputText" name="" id="">top text</textarea>
+            <textarea class="inputText" name="" id="inputTopText">top text</textarea>
             <div>
               <input type="checkbox" name="" id="" />
               <label for="notTopCheck">Sin texto superior</label>
