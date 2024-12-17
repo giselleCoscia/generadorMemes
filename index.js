@@ -10,15 +10,22 @@
 
  //Input imgs
  const inputUrl = document.querySelector("#inputUrl");
+ const inputLeyers = document.querySelector("#inputLeyers")
  
  //Input texts
  const inputTopText =  document.querySelector("#inputTopText");
+ const inputBottomText = document.querySelector("#inputBottomText");
+
+ //input Color
+ const inputColor = document.querySelector(".inputColor")
 
   const darkTheme = document.querySelector ("body.darkTheme");
   const lightTheme = document.querySelector ("body.lightTheme");
 
  const contenedorImg = document.querySelector(".contenedorImg")
  const topText = document.querySelector("#topText");
+ const bottomText = document.querySelector("#bottomText")
+ const img = document.querySelector("#img");
 
 
 // Eventos - panel de imagen y texto//
@@ -55,6 +62,36 @@ btnToogleTheme.addEventListener("click", (e) => {
   }
 })
 
+//Panel Imagen
+
+inputColor.addEventListener("input",(e)=>{
+  contenedorImg.style.backgroundColor = e.target.value
+  })
+
+  inputUrl.addEventListener("input",(e)=>{
+    img.src = e.target.value
+    })
+    inputLeyers.addEventListener("input",(e)=>{
+      img.style.backgroundBlendMode = e.target.value
+    })
+
+
+
+
+
+
+//Panel texto
+
 inputTopText.addEventListener("input",(e)=>{
   topText.textContent = e.target.value;
 })
+inputBottomText.addEventListener("input",(e)=>{
+  bottomText.textContent = e.target.value;
+})
+
+
+
+
+
+
+

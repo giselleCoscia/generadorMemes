@@ -74,14 +74,15 @@ h2{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:var(--color-background);
+  background-color: var(--color-background);
   height: 470px;
+  width: 100%;
 }
 .contenedorimg .img{
   width: 100%;
   height: 270px;
 }
-.buttonText{
+.bottomText{
   background-color:var(--color-boton-default);
   display: flex;
   justify-content: center;
