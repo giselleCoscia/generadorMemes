@@ -22,9 +22,15 @@ const inputHue = document.querySelector("#inputHue");
 const inputSaturation = document.querySelector("#inputSaturation");
 const inputNegative = document.querySelector("#inputNegative");
 
+const checkboxTopText = document.querySelector("#checkboxTopText");
+const checkboxBottomText = document.querySelector("#checkboxBottomText"); 
+const checkboxFondoTransparente = document.querySelector("#checkboxFondoTransparente");
+
 //Input texts
 const inputTopText = document.querySelector("#inputTopText");
 const inputBottomText = document.querySelector("#inputBottomText");
+const familyFont = document.querySelector("#familyFont")
+const inputFontSize = document.querySelector("#inputFontSize")
 
 //input Color
 const inputColor = document.querySelector(".inputColor")
@@ -34,6 +40,9 @@ const lightTheme = document.querySelector("body.lightTheme");
 
 const contenedorImg = document.querySelector(".contenedorImg")
 const topText = document.querySelector("#topText");
+const contendorTextTop = document.querySelector("#contendorTextTop");
+const contendorTextBottom = document.querySelector("#contendorTextBottom");
+
 const bottomText = document.querySelector("#bottomText")
 const img = document.querySelector("#img");
 
@@ -131,9 +140,24 @@ inputBottomText.addEventListener("input", (e) => {
   bottomText.textContent = e.target.value;
 })
 
+checkboxTopText.addEventListener("change",()=>{
+  contendorTextTop.classList.toggle("ocultar")
+})
 
+checkboxBottomText.addEventListener("change",()=>{
+  contendorTextBottom.classList.toggle("ocultar")
+})
 
+checkboxFondoTransparente.addEventListener("change",()=>{
+  contendorTextTop.classList.toggle("transparentar")
+  contendorTextBottom.classList.toggle("transparentar")
+})
 
+familyFont.addEventListener("input",(e)=>{
+  topText.style.fontFamily = e.target.value
+  bottomText.style.fontFamily =e.target.value
+})
 
-
-
+inputFontSize.addEventListener("input",(e)=>{
+  topText.style.fontSize = `${e.target.value}px`
+})

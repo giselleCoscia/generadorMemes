@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -13,8 +13,7 @@ body.darkTheme {
 
   --color-text: #efefef;
 
-  --font-primary:"Segoe UI", Tahoma, Verdana, sans-serif;
-
+  --font-primary: "Segoe UI", Tahoma, Verdana, sans-serif;
 }
 
 body.lightTheme {
@@ -30,26 +29,33 @@ body.lightTheme {
   --color-title-control: rgba(193, 193, 193, 0.7);
 
   --font-primary: "Segoe UI", Tahoma, Verdana, sans-serif;
-  
 }
-main{
+
+main {
   background-color: var(--color-background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
 }
-header{
-  background-color: var(--color-header);
+header {
   width: 100%;
-  height: 80px;
-}
-nav{
+  padding: 16px;
   background-color: var(--color-header);
-  width: 100%;
-  height: 50px;
-display: flex;
-justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-button{
+nav {
+  margin-top: 8px;
+  background-color: var(--color-header);
+  display: flex;
+  justify-content: center;
+}
+button {
   background-color: var(--color-boton-default);
-  color:var(--color-text);
+  color: var(--color-text);
   border: none;
   cursor: pointer;
   margin: 10px;
@@ -57,64 +63,69 @@ button{
   border-radius: 8px;
   align-items: center;
 }
-.topText{
-  background-color:var(--color-boton-default);
+
+h1 {
+  color: var(--color-text);
+}
+
+h2 {
+  color: var(--color-text);
+  font-size: 24px;
+}
+
+img {
+  height: 100%;
+}
+
+.imgText {
+  background-color: var(--color-boton-default);
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 22px 50px;
 }
-h1{
-  color: var(--color-text);
-}
-h2{
-  color: var(--color-text);
-  margin-top: 20px;
-}
-.contenedorImg{
+
+.contenedorImg {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--color-background);
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  height: 570px;
 }
 
-.bottomText{
-  background-color:var(--color-boton-default);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.panelDeControl{
+.panelDeControl {
   width: 100%;
   height: 100%;
   display: none;
   position: fixed;
   z-index: 10;
-  background-color:var(--color-panel);
+  background-color: var(--color-panel);
   top: 0;
 }
-.controlIMG{
+.controlIMG {
   padding: 16px;
-color: var(--color-text);
+  color: var(--color-text);
 }
-.inputText{
+.inputText {
   width: 100%;
   margin-top: 10px;
   border-radius: 4px;
 }
-.inputColor{
+.inputColor {
   background-color: transparent;
   border: none;
 }
-.selectorColor{
+.selectorColor {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content:space-between;
+  justify-content: space-between;
 }
-.filtros{
+.filtros {
   margin-bottom: 10px;
   margin-top: 8px;
   display: flex;
@@ -122,45 +133,46 @@ color: var(--color-text);
 }
 
 /* panel de texto */
-.controltext{
+.controltext {
   padding: 16px;
-color:var(--color-text);
+  color: var(--color-text);
 }
-.alineado{
+
+.alineado {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-@media screen and (min-width: 600px){
-  .contenedorMeme{
-    width: 100%;
-    max-width: 610px;
-    height: 910px;
-    display: flex;
- flex-direction: column;
- align-content: center;
- margin-left: 600px;
-  }
-  .contenedorImg{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color:var(--color-background);
-    height: 570px;
-  }
+.contenedorMeme {
+  margin-top: 16px;
+  width: 100%;
+  max-width: 610px;
+  position: relative;
 }
-img{
-  height: 100%;
+
+.ocultar{
+  display: none;
 }
-.btnThemesDark{
-display: flex;
+
+.transparentar{
+  background-color: transparent;
+  position: absolute;
 }
-.btnThamesLight{
-display: none;
+
+#contendorTextTop{
+  top:0
+}
+
+#contendorTextBottom{
+  bottom: 0;
 }
 
 @media (min-width: 1300px) {
+  main {
+    width: calc(100% - 260px);
+  }
+
   .panelDeControl {
     display: block;
     position: fixed;

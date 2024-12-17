@@ -6,154 +6,220 @@
     <title>Document</title>
     <link rel="stylesheet" href="./styes.css" />
   </head>
-  <body  class="darkTheme">
-    <header>
-      <h1>Generador de Memes</h1>
-      <nav>
-        <button class="btnImg" id="btnImg">Imagen</button>
-        <button class="btnTex" id="btnTex">Texto</button>
-        <button class="btn" id="btnToogleTheme">Modo Oscuro</button>
-      </nav>
-    </header>
+  <body class="darkTheme">
     <main>
+      <header>
+        <h1>Generador de Memes</h1>
+        <nav>
+          <button class="btnImg" id="btnImg">Imagen</button>
+          <button class="btnTex" id="btnTex">Texto</button>
+          <button class="btn" id="btnToogleTheme">Modo Oscuro</button>
+        </nav>
+      </header>
       <section class="contenedorMeme">
-        <div class="topText">
+        <div class="imgText" id="contendorTextTop">
           <h2 id="topText">top text</h2>
         </div>
-        <div class="contenedorImg" id="img">
-        </div>
-        <div class="bottomText">
+        <div class="contenedorImg" id="img"></div>
+        <div class="imgText" id="contendorTextBottom">
           <h2 id="bottomText">bottom Text</h2>
         </div>
       </section>
-      <aside class="panelDeControl" id="panelDeControl">
-        <button id="btnCerrarPanel">x</button>
-        <section class="controlIMG" id="panelImg">
-          <h1>IMAGEN</h1>
-          <h1>URL</h1>
-          <input class="inputText" type="text" id="inputUrl" />
-          <div class="selectorColor">
-            <div><input class="inputColor" type="color" /></div>
-            <div class="selector">
-              <select id="inputLeyers">
-                <option value="unset">Ninguno</option>
-                <option value="lighten">Aclarar</option>
-                <option value="darken">Oscurecer</option>
-                <option value="difference">Diferencia</option>
-                <option value="luminosity">Luminosidad</option>
-                <option value="multiply">Multiplicar</option>
-              </select>
-            </div>
-          </div>
-          <h1>Filtros</h1>
-          <div class="filtros">
-            <label for="inputBrightness">BRILLO</label>
-            <input type="range" min="0" max="2" value="1" step="0.01" id="inputBrightness">
-          </div>
-          <div class="filtros">
-            <label for="inputOpacity">OPACIDAD</label>
-            <input type="range" min="0" max="1" value="1" step="0.01" id="inputOpacity" />
-          </div>
-          <div class="filtros">
-            <label for="inputContrast">CONTRASTE</label>
-            <input type="range" min="0" max="200" value="100" step="1" id="inputContrast" />
-          </div>
-          <div class="filtros">
-            <label for="inputBlur">DESENFOQUE</label>
-            <input type="range" min="0" max="10" value="0" step="0.1" id="inputBlur" />
-          </div>
-          <div class="filtros">
-            <label for="inputGrayscale">ESCALA DE GRISES</label>
-            <input type="range" min="0" max="100" value="0" step="1" id="inputGrayscale" />
-          </div>
-          <div class="filtros">
-            <label for="inputSepia">SEPIA</label>
-            <input type="range" min="0" max="100" value="0" step="1" id="inputSepia" />
-          </div>
-          <div class="filtros">
-            <label for="inputHue">HUE</label>
-            <input type="range" min="0" max="359" value="0" step="1" id="inputHue" />
-          </div>
-          <div class="filtros">
-            <label for="inputSaturation">SATURACION</label>
-            <input type="range" min="100" max="1000" value="100" step="10" id="inputSaturation" />
-          </div>
-          <div class="filtros">
-            <label for="inputNegative">NEGATIVO</label>
-            <input type="range" min="0" max="1" value="0" step="0.1" id="inputNegative" />
-          </div>
-          <button id="btnResetFilter">Restablecer filtros</button>
-        </section>
-        <section class="controltext" id="panelText" style="display: none;">
-          <h1>TEXTO</h1>
-          <section class="filtros">
-            <h1>SUPERIOR</h1>
-            <textarea class="inputText" name="" id="inputTopText">top text</textarea>
-            <div>
-              <input type="checkbox" name="" id="" />
-              <label for="notTopCheck">Sin texto superior</label>
-            </div>
-            <div class="filtros">
-              <h1>INFERIOR</h1>
-              <textarea class="inputText" name="" id="inputBottomText">bottom text</textarea>
-              <div>
-                <input type="checkbox" name="" id="" />
-                <label for="notTopCheck">Sin texto superior</label>
-              </div>
-            </div>
-            <div class="filtros inputText">
-              <h1>Fuente</h1>
-              <select name="familyFront" id="">
-                <option value="Arial">Arial</option>
-                <option value="Arial Black">Arial Black</option>
-                <option value="impact">Impact</option>
-                <option value="Segoe UI">Segoe UI</option>
-              </select>
-            </div>
-            <div class="filtros inputText">
-              <input type="number" />
-            </div>
-            <div>
-              <button></button>
-              <button></button>
-              <button></button>
-            </div>
-            <div class="filtros">
-              <h1>Color</h1>
-              <input class="inputColor" type="color" />
-            </div>
-            <div class="filtros">
-              <h1>Fondo</h1>
-              <input class="inputColor" type="color" />
-            </div>
-            <div class="filtros alineado">
-              <input type="checkbox" />
-              <label for="fondoTransparente">Fondo transparente</label>
-            </div>
-            <h1>Contorno</h1>
-            <div>
-              <button>Ninguno</button>
-              <button>Claro</button>
-              <button>Oscuro</button>
-            </div>
-            <div class="filtros inputText">
-              <h1>Espaciado</h1>
-              <input type="number" />
-            </div>
-            <div class="filtros inputText">
-              <h1>Interlineado</h1>
-              <select name="interlinead" id="">
-                <option value="0.8 ">0.8</option>
-                <option value="1">1</option>
-                <option value="1.2">1.2</option>
-                <option value="1.5">1.5</option>
-                <option value="2"></option>
-              </select>
-            </div>
-          </section>
-        </section>
-      </aside>
     </main>
+    <aside class="panelDeControl" id="panelDeControl">
+      <button id="btnCerrarPanel">x</button>
+      <section class="controlIMG" id="panelImg">
+        <h1>IMAGEN</h1>
+        <h1>URL</h1>
+        <input class="inputText" type="text" id="inputUrl" />
+        <div class="selectorColor">
+          <div><input class="inputColor" type="color" /></div>
+          <div class="selector">
+            <select id="inputLeyers">
+              <option value="unset">Ninguno</option>
+              <option value="lighten">Aclarar</option>
+              <option value="darken">Oscurecer</option>
+              <option value="difference">Diferencia</option>
+              <option value="luminosity">Luminosidad</option>
+              <option value="multiply">Multiplicar</option>
+            </select>
+          </div>
+        </div>
+        <h1>Filtros</h1>
+        <div class="filtros">
+          <label for="inputBrightness">BRILLO</label>
+          <input
+            type="range"
+            min="0"
+            max="2"
+            value="1"
+            step="0.01"
+            id="inputBrightness"
+          />
+        </div>
+        <div class="filtros">
+          <label for="inputOpacity">OPACIDAD</label>
+          <input
+            type="range"
+            min="0"
+            max="1"
+            value="1"
+            step="0.01"
+            id="inputOpacity"
+          />
+        </div>
+        <div class="filtros">
+          <label for="inputContrast">CONTRASTE</label>
+          <input
+            type="range"
+            min="0"
+            max="200"
+            value="100"
+            step="1"
+            id="inputContrast"
+          />
+        </div>
+        <div class="filtros">
+          <label for="inputBlur">DESENFOQUE</label>
+          <input
+            type="range"
+            min="0"
+            max="10"
+            value="0"
+            step="0.1"
+            id="inputBlur"
+          />
+        </div>
+        <div class="filtros">
+          <label for="inputGrayscale">ESCALA DE GRISES</label>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="0"
+            step="1"
+            id="inputGrayscale"
+          />
+        </div>
+        <div class="filtros">
+          <label for="inputSepia">SEPIA</label>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="0"
+            step="1"
+            id="inputSepia"
+          />
+        </div>
+        <div class="filtros">
+          <label for="inputHue">HUE</label>
+          <input
+            type="range"
+            min="0"
+            max="359"
+            value="0"
+            step="1"
+            id="inputHue"
+          />
+        </div>
+        <div class="filtros">
+          <label for="inputSaturation">SATURACION</label>
+          <input
+            type="range"
+            min="100"
+            max="1000"
+            value="100"
+            step="10"
+            id="inputSaturation"
+          />
+        </div>
+        <div class="filtros">
+          <label for="inputNegative">NEGATIVO</label>
+          <input
+            type="range"
+            min="0"
+            max="1"
+            value="0"
+            step="0.1"
+            id="inputNegative"
+          />
+        </div>
+        <button id="btnResetFilter">Restablecer filtros</button>
+      </section>
+      <section class="controltext" id="panelText" style="display: none">
+        <h1>TEXTO</h1>
+        <section class="filtros">
+          <h1>SUPERIOR</h1>
+          <textarea class="inputText" id="inputTopText">
+top text</textarea
+          >
+          <div>
+            <input type="checkbox"  id="checkboxTopText" />
+            <label for="checkboxTopText">Sin texto superior</label>
+          </div>
+          <div class="filtros">
+            <h1>INFERIOR</h1>
+            <textarea class="inputText" id="inputBottomText">
+bottom text</textarea
+            >
+            <div>
+              <input type="checkbox"  id="checkboxBottomText" />
+              <label for="checkboxBottomText">Sin texto superior</label>
+            </div>
+          </div>
+          <div class="filtros inputText">
+            <h1>Fuente</h1>
+            <select id="familyFont">
+              <option value="Arial">Arial</option>
+              <option value="Arial Black">Arial Black</option>
+              <option value="impact">Impact</option>
+              <option value="Segoe UI">Segoe UI</option>
+            </select>
+          </div>
+          <div class="filtros inputText">
+            <input id="inputFontSize" type="number" min="4" value="24"/>
+          </div>
+          <div>
+            <button></button>
+            <button></button>
+            <button></button>
+          </div>
+          <div class="filtros">
+            <h1>Color</h1>
+            <input class="inputColor" type="color" />
+          </div>
+          <div class="filtros">
+            <h1>Fondo</h1>
+            <input class="inputColor" type="color" />
+          </div>
+          <div class="filtros alineado">
+            <input type="checkbox" id="checkboxFondoTransparente"/>
+            <label for="checkboxFondoTransparente">Fondo transparente</label>
+          </div>
+          <h1>Contorno</h1>
+          <div>
+            <button>Ninguno</button>
+            <button>Claro</button>
+            <button>Oscuro</button>
+          </div>
+          <div class="filtros inputText">
+            <h1>Espaciado</h1>
+            <input type="number" />
+          </div>
+          <div class="filtros inputText">
+            <h1>Interlineado</h1>
+            <select name="interlinead" id="">
+              <option value="0.8 ">0.8</option>
+              <option value="1">1</option>
+              <option value="1.2">1.2</option>
+              <option value="1.5">1.5</option>
+              <option value="2"></option>
+            </select>
+          </div>
+        </section>
+      </section>
+    </aside>
   </body>
   <script src="./index.js"></script>
 </html>
