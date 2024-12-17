@@ -66,11 +66,14 @@ button {
 
 h1 {
   color: var(--color-text);
+
 }
 
 h2 {
   color: var(--color-text);
   font-size: 24px;
+ 
+  
 }
 
 img {
@@ -80,10 +83,8 @@ img {
 .imgText {
   background-color: var(--color-boton-default);
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 22px 50px;
+  text-align: center;
 }
 
 .contenedorImg {
@@ -136,6 +137,7 @@ img {
 .controltext {
   padding: 16px;
   color: var(--color-text);
+ 
 }
 
 .alineado {
@@ -161,7 +163,8 @@ img {
 }
 
 #contendorTextTop{
-  top:0
+  top:0;
+  
 }
 
 #contendorTextBottom{

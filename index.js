@@ -6,6 +6,9 @@ const btnTex = document.querySelector("#btnTex");
 const btnImg = document.querySelector("#btnImg");
 const btnToogleTheme = document.querySelector("#btnToogleTheme");
 const btnResetFilter = document.querySelector("#btnResetFilter");
+const btnAlignLeft = document.querySelector("#btnAlignLeft");
+const btnAlignCenter = document.querySelector("#btnAlignCenter");
+const btnAlignRight = document.querySelector("#btnAlignRight");
 
 const panelImg = document.querySelector("#panelImg");
 
@@ -26,6 +29,8 @@ const checkboxTopText = document.querySelector("#checkboxTopText");
 const checkboxBottomText = document.querySelector("#checkboxBottomText"); 
 const checkboxFondoTransparente = document.querySelector("#checkboxFondoTransparente");
 
+
+
 //Input texts
 const inputTopText = document.querySelector("#inputTopText");
 const inputBottomText = document.querySelector("#inputBottomText");
@@ -39,6 +44,7 @@ const darkTheme = document.querySelector("body.darkTheme");
 const lightTheme = document.querySelector("body.lightTheme");
 
 const contenedorImg = document.querySelector(".contenedorImg")
+const imgText = document.querySelector(".imgText")
 const topText = document.querySelector("#topText");
 const contendorTextTop = document.querySelector("#contendorTextTop");
 const contendorTextBottom = document.querySelector("#contendorTextBottom");
@@ -160,4 +166,10 @@ familyFont.addEventListener("input",(e)=>{
 
 inputFontSize.addEventListener("input",(e)=>{
   topText.style.fontSize = `${e.target.value}px`
+  bottomText.style.fontSize = `${e.target.value}px`
 })
+
+btnAlignLeft.addEventListener("click", (e) => {
+  topText.style.textAlign = "left";
+  bottoText.style.textAlign = "left";
+});
