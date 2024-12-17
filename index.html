@@ -20,8 +20,7 @@
         <div class="topText">
           <h2 id="topText">top text</h2>
         </div>
-        <div class="contenedorImg">
-          <img id=img  src=# alt="">
+        <div class="contenedorImg" id="img">
         </div>
         <div class="bottomText">
           <h2 id="bottomText">bottom Text</h2>
@@ -34,9 +33,9 @@
           <h1>URL</h1>
           <input class="inputText" type="text" id="inputUrl" />
           <div class="selectorColor">
-            <div><input class="inputColor" aria-label="" type="color" /></div>
+            <div><input class="inputColor" type="color" /></div>
             <div class="selector">
-              <select aria-label="capa" id="">
+              <select id="inputLeyers">
                 <option value="unset">Ninguno</option>
                 <option value="lighten">Aclarar</option>
                 <option value="darken">Oscurecer</option>
@@ -48,42 +47,42 @@
           </div>
           <h1>Filtros</h1>
           <div class="filtros">
-            <label for="brightness">BRILLO</label>
-            <input type="range" />
+            <label for="inputBrightness">BRILLO</label>
+            <input type="range" min="0" max="2" value="1" step="0.01" id="inputBrightness">
           </div>
           <div class="filtros">
-            <label for="opacity">OPACIDAD</label>
-            <input type="range" />
+            <label for="inputOpacity">OPACIDAD</label>
+            <input type="range" min="0" max="1" value="1" step="0.01" id="inputOpacity" />
           </div>
           <div class="filtros">
-            <label for="contrast">CONTRASTE</label>
-            <input type="range" />
+            <label for="inputContrast">CONTRASTE</label>
+            <input type="range" min="0" max="200" value="100" step="1" id="inputContrast" />
           </div>
           <div class="filtros">
-            <label for="blur">DESENFOQUE</label>
-            <input type="range" />
+            <label for="inputBlur">DESENFOQUE</label>
+            <input type="range" min="0" max="10" value="0" step="0.1" id="inputBlur" />
           </div>
           <div class="filtros">
-            <label for="grayscale">ESCALA DE GRISES</label>
-            <input type="range" />
+            <label for="inputGrayscale">ESCALA DE GRISES</label>
+            <input type="range" min="0" max="100" value="0" step="1" id="inputGrayscale" />
           </div>
           <div class="filtros">
-            <label for="sepia">SEPIA</label>
-            <input type="range" />
+            <label for="inputSepia">SEPIA</label>
+            <input type="range" min="0" max="100" value="0" step="1" id="inputSepia" />
           </div>
           <div class="filtros">
-            <label for="hue-rotation">HUE</label>
-            <input type="range" />
+            <label for="inputHue">HUE</label>
+            <input type="range" min="0" max="359" value="0" step="1" id="inputHue" />
           </div>
           <div class="filtros">
-            <label for="saturation">SATURACION</label>
-            <input type="range" />
+            <label for="inputSaturation">SATURACION</label>
+            <input type="range" min="100" max="1000" value="100" step="10" id="inputSaturation" />
           </div>
           <div class="filtros">
-            <label for="negative">NEGATIVO</label>
-            <input type="range" />
+            <label for="inputNegative">NEGATIVO</label>
+            <input type="range" min="0" max="1" value="0" step="0.1" id="inputNegative" />
           </div>
-          <button>Restablecer filtros</button>
+          <button id="btnResetFilter">Restablecer filtros</button>
         </section>
         <section class="controltext" id="panelText" style="display: none;">
           <h1>TEXTO</h1>
