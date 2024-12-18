@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+    integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
+    integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
+    crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="./styes.css" />
   </head>
@@ -17,7 +23,7 @@
           <button class="btn" id="btnToogleTheme">Modo Oscuro</button>
         </nav>
       </header>
-      <section class="contenedorMeme">
+      <section class="contenedorMeme" id="contenedorMeme">
         <div class="imgText" id="contendorTextTop">
           <h2 id="topText" >top text</h2>
         </div>
@@ -26,10 +32,11 @@
           <h2 id="bottomText">bottom Text</h2>
         </div>
       </section>
+      <button id="btnDescargar">Descargar</button>
     </main>
     <aside class="panelDeControl" id="panelDeControl">
       <button id="btnCerrarPanel">x</button>
-      <section class="controlIMG" id="panelImg">
+      <section class="controlIMG" id="panelImg" >
         <h1>IMAGEN</h1>
         <h1>URL</h1>
         <input class="inputText" type="text" id="inputUrl" />
@@ -148,7 +155,7 @@
         </div>
         <button id="btnResetFilter">Restablecer filtros</button>
       </section>
-      <section class="controltext" id="panelText" style="display: none">
+      <section class="controltext" id="panelText"  style="display: none">
         <h1>TEXTO</h1>
         <section class="filtros">
           <h1>SUPERIOR</h1>
@@ -188,11 +195,11 @@ bottom text</textarea
           </div>
           <div class="filtros">
             <h1>Color</h1>
-            <input class="inputColor" type="color" />
+            <input class="inputColor" type="color" id="inputColorLetra"/>
           </div>
           <div class="filtros">
             <h1>Fondo</h1>
-            <input class="inputColor" type="color" />
+            <input  class="inputColor" type="color" id="inputColorFondo" />
           </div>
           <div class="filtros alineado">
             <input type="checkbox" id="checkboxFondoTransparente"/>
@@ -200,17 +207,17 @@ bottom text</textarea
           </div>
           <h1>Contorno</h1>
           <div>
-            <button>Ninguno</button>
-            <button>Claro</button>
-            <button>Oscuro</button>
+            <button id="btnContorno">Ninguno</button>
+            <button id="btnClaro">Claro</button>
+            <button id="btnOscuro">Oscuro</button>
           </div>
           <div class="filtros inputText">
             <h1>Espaciado</h1>
-            <input type="number" />
+            <input type="number" id="inputSpace" />
           </div>
           <div class="filtros inputText">
             <h1>Interlineado</h1>
-            <select name="interlinead" id="">
+            <select name="interlinead" id="inputInterlinead">
               <option value="0.8 ">0.8</option>
               <option value="1">1</option>
               <option value="1.2">1.2</option>

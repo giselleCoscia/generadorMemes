@@ -36,7 +36,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 header {
   width: 100%;
@@ -88,8 +88,6 @@ img {
 }
 
 .contenedorImg {
-  display: flex;
-  justify-content: center;
   align-items: center;
   background-color: var(--color-background);
   background-size: cover;
@@ -158,7 +156,6 @@ img {
 }
 
 .transparentar{
-  background-color: transparent;
   position: absolute;
 }
 

@@ -9,8 +9,15 @@ const btnResetFilter = document.querySelector("#btnResetFilter");
 const btnAlignLeft = document.querySelector("#btnAlignLeft");
 const btnAlignCenter = document.querySelector("#btnAlignCenter");
 const btnAlignRight = document.querySelector("#btnAlignRight");
+const btnDescargar = document.querySelector("#btnDescargar");
 
+const btnContorno = document.querySelector("#btnContorno");
+const btnClaro = document.querySelector("#btnClaro");
+const btnOscuro = document.querySelector("#btnOscuro");
+
+//paneles
 const panelImg = document.querySelector("#panelImg");
+const panelText = document.querySelector("#panelText");
 
 //Input imgs
 const inputUrl = document.querySelector("#inputUrl");
@@ -25,35 +32,36 @@ const inputHue = document.querySelector("#inputHue");
 const inputSaturation = document.querySelector("#inputSaturation");
 const inputNegative = document.querySelector("#inputNegative");
 
-const checkboxTopText = document.querySelector("#checkboxTopText");
-const checkboxBottomText = document.querySelector("#checkboxBottomText"); 
-const checkboxFondoTransparente = document.querySelector("#checkboxFondoTransparente");
 
 
 
 //Input texts
+const checkboxTopText = document.querySelector("#checkboxTopText");
+const checkboxBottomText = document.querySelector("#checkboxBottomText");
+const checkboxFondoTransparente = document.querySelector("#checkboxFondoTransparente");
 const inputTopText = document.querySelector("#inputTopText");
 const inputBottomText = document.querySelector("#inputBottomText");
 const familyFont = document.querySelector("#familyFont")
 const inputFontSize = document.querySelector("#inputFontSize")
+const inputSpace = document.querySelector("#inputSpace")
+const inputInterlinead = document.querySelector("#inputInterlinead")
 
-//input Color
-const inputColor = document.querySelector(".inputColor")
-
-const darkTheme = document.querySelector("body.darkTheme");
-const lightTheme = document.querySelector("body.lightTheme");
-
+const contenedorMeme = document.querySelector("#contenedorMeme");
 const contenedorImg = document.querySelector(".contenedorImg")
-const imgText = document.querySelector(".imgText")
 const topText = document.querySelector("#topText");
 const contendorTextTop = document.querySelector("#contendorTextTop");
 const contendorTextBottom = document.querySelector("#contendorTextBottom");
 
 const bottomText = document.querySelector("#bottomText")
-const img = document.querySelector("#img");
+
+//input Color
+const inputColor = document.querySelector(".inputColor");
+const inputColorLetra = document.querySelector("#inputColorLetra");
+const inputColorFondo = document.querySelector("#inputColorFondo");
 
 
 // Eventos - panel de imagen y texto//
+
 btnCerrarPanel.addEventListener("click", (e) => {
   e.preventDefault();
   panelDeControl.style.display = "none";
@@ -139,6 +147,7 @@ btnResetFilter.addEventListener("click", () => {
 
 
 //Panel texto
+
 inputTopText.addEventListener("input", (e) => {
   topText.textContent = e.target.value;
 })
@@ -146,30 +155,92 @@ inputBottomText.addEventListener("input", (e) => {
   bottomText.textContent = e.target.value;
 })
 
-checkboxTopText.addEventListener("change",()=>{
+checkboxTopText.addEventListener("change", () => {
   contendorTextTop.classList.toggle("ocultar")
 })
 
-checkboxBottomText.addEventListener("change",()=>{
+checkboxBottomText.addEventListener("change", () => {
   contendorTextBottom.classList.toggle("ocultar")
 })
 
-checkboxFondoTransparente.addEventListener("change",()=>{
+checkboxFondoTransparente.addEventListener("change", () => {
+  if(checkboxFondoTransparente.checked){
+    contendorTextTop.style.backgroundColor = "transparent"
+    contendorTextBottom.style.backgroundColor = "transparent"
+  }else{
+    contendorTextTop.style.backgroundColor = inputColorFondo.value
+    contendorTextBottom.style.backgroundColor = inputColorFondo.value
+  }
   contendorTextTop.classList.toggle("transparentar")
   contendorTextBottom.classList.toggle("transparentar")
 })
 
-familyFont.addEventListener("input",(e)=>{
+
+familyFont.addEventListener("input", (e) => {
   topText.style.fontFamily = e.target.value
-  bottomText.style.fontFamily =e.target.value
+  bottomText.style.fontFamily = e.target.value
 })
 
-inputFontSize.addEventListener("input",(e)=>{
+inputFontSize.addEventListener("input", (e) => {
   topText.style.fontSize = `${e.target.value}px`
   bottomText.style.fontSize = `${e.target.value}px`
 })
 
-btnAlignLeft.addEventListener("click", (e) => {
+btnAlignLeft.addEventListener("click", () => {
   topText.style.textAlign = "left";
-  bottoText.style.textAlign = "left";
+  bottomText.style.textAlign = "left";
 });
+btnAlignCenter.addEventListener("click", () => {
+  topText.style.textAlign = "center";
+  bottomText.style.textAlign = "center";
+});
+btnAlignRight.addEventListener("click", () => {
+  topText.style.textAlign = "right";
+  bottomText.style.textAlign = "right";
+});
+
+inputColorLetra.addEventListener("input", (e) => {
+  topText.style.color = e.target.value
+  bottomText.style.color = e.target.value
+})
+
+inputColorFondo.addEventListener("input", (e) => {
+  if(checkboxFondoTransparente.checked){
+    contendorTextTop.style.backgroundColor = "transparent"
+    contendorTextBottom.style.backgroundColor = "transparent"
+  }else{
+    contendorTextTop.style.backgroundColor = e.target.value
+    contendorTextBottom.style.backgroundColor = e.target.value
+  }
+})
+
+btnContorno.addEventListener("click", (e) => {
+  topText.style.textShadow = "none"
+  bottomText.style.textShadow = "none"
+})
+btnClaro.addEventListener("click", (e) => {
+  topText.style.textShadow = "rgb(255, 255, 255) 2px 2px, rgb(255, 255, 255) -2px 2px, rgb(255, 255, 255) 2px -2px, rgb(255, 255, 255) -2px -2px"
+  bottomText.style.textShadow = "rgb(255, 255, 255) 2px 2px, rgb(255, 255, 255) -2px 2px, rgb(255, 255, 255) 2px -2px, rgb(255, 255, 255) -2px -2px"
+})
+btnOscuro.addEventListener("click", (e) => {
+  topText.style.textShadow = "rgb(0, 0, 0) 2px 2px, rgb(0, 0, 0) -2px 2px, rgb(0, 0, 0) 2px -2px, rgb(0, 0, 0) -2px -2px"
+  bottomText.style.textShadow = "rgb(0, 0, 0) 2px 2px, rgb(0, 0, 0) -2px 2px, rgb(0, 0, 0) 2px -2px, rgb(0, 0, 0) -2px -2px"
+})
+
+inputSpace.addEventListener('input',(e)=>{
+  contendorTextTop.style.padding = `${e.target.value}px`
+  contendorTextBottom.style.padding =  `${e.target.value}px`
+})
+
+inputInterlinead.addEventListener('input',(e)=>{
+  contendorTextTop.style.lineHeight = e.target.value
+  contendorTextBottom.style.lineHeight = e.target.value
+})
+
+// boton de descargar meme
+
+btnDescargar.addEventListener("click",()=>{
+  domtoimage.toBlob(contenedorMeme).then(function (blob) {
+    saveAs(blob, 'momazo.png')
+  })
+})
